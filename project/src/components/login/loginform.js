@@ -5,13 +5,9 @@ import { StackNavigation } from 'react-navigate';
 
 // create a component
 class Button extends Component {
-    static navigationOptions = {
-		title: 'login-button',
-	};
 	render() {
-		const { navigate } = this.props.navigation;
         return (
-        <TouchableOpacity onPress={() => navigate('Options')}
+        <TouchableOpacity 
         	style={styles.buttonContainer}>
             <Text style={styles.buttonText} >{this.props.text}</Text>
         </TouchableOpacity>
@@ -21,6 +17,7 @@ class Button extends Component {
 class LoginForm extends Component {
     render() {
         return (
+			const { navigate } = this.props.navigation;
             <View style={styles.container}>
                 <StatusBar
                 barstyle="light-content"
@@ -43,7 +40,8 @@ class LoginForm extends Component {
                 style={styles.input}
                 ref={(input) => this.passwordInput = input}
                 />
-                <Button text="LOGIN"/>
+                <Button onPress={() => navigate('Options')}
+					text="LOGIN"/>
             </View>
         );
     }
