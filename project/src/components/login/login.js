@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image, Text, KeyboardAvoidingView } from 'react-native';
 import LoginForm from './loginform';
 import { StackNavigator } from 'react-navigation';
+
 export default class Login extends React.Component {
     static navigationOptions  = {
         title: 'Login',

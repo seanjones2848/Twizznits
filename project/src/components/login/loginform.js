@@ -6,9 +6,8 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar } from '
 class Button extends Component {
     render() {
         return (
-        <TouchableOpacity 
-        onPress={() => naivgate('Options')}
-        style={styles.buttonContainer}>
+        <TouchableOpacity onPress={() => navigate('Options')}
+        	style={styles.buttonContainer}>
             <Text style={styles.buttonText} >{this.props.text}</Text>
         </TouchableOpacity>
         );
