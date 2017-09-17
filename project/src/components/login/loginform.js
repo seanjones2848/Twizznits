@@ -5,7 +5,10 @@ import { StackNavigation } from 'react-navigate';
 
 // create a component
 class Button extends Component {
-    render() {
+    static navigationOptions = {
+		title: 'login-button',
+	};
+	render() {
 		const { navigate } = this.props.navigation;
         return (
         <TouchableOpacity onPress={() => navigate('Options')}
