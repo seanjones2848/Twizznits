@@ -1,38 +1,38 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import Login from './src/components/login/login';
+import Options from './src/components/options/options';
+import Splash from './src/components/splash/splash';
 
-export class OpenScreen extends React.Component {
-  handlePress() {
-    console.log("lol");
-      <text>You really know how to push my buttons!</text>
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={
+    
+    };
   }
 
 render() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to Consensus.</Text>
-      <Text>Here to personalize your car experience.</Text>
-      <Button
-      onPress={() => this.handlePress()}
-      title="Learn More"
-      color="#841584"
-      accessibilityLabel="Learn more about this purple button"
-      />
-    </View>
+   <Login />
+//    <Options username="Louise"/>
+//    <Splash />
   );
 }
 }
+export const SimpleApp = StackNavigator ({
+  Splash: { screen: Splash },
+  Login: { screen: Login },
+  Options: { screen: Options },
 
-export default class App extends React.Component {
-  
-render() {
-  return (
-    <OpenScreen />
-  );
-}
-}
-
+});
 const styles = StyleSheet.create({
+  logo: {
+    width: 250,
+    height: 100,
+    borderRadius: 10
+  },
   container: {
     flex: 1,
     backgroundColor: '#bbb',
