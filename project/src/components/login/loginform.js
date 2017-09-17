@@ -5,6 +5,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar } from '
 // create a component
 class Button extends Component {
     render() {
+		const { navigate } = this.props.navigation;
         return (
         <TouchableOpacity onPress={() => navigate('Options')}
         	style={styles.buttonContainer}>
