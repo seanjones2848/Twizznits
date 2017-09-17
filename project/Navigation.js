@@ -4,7 +4,7 @@ import React from 'react';
 import { AppRegistry, Text } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-class HomeScreen extends React.Component {
+class LoginScreen extends React.Component {
 	static vavigationOptions = {
 		title: 'Welcome',
 	};
@@ -25,7 +25,35 @@ class HomeScreen extends React.Component {
 	}
 }
 
-class NextScreen extends React.Component {
+class LoadScreen extends React.Component {
+	static naviationOptions = ({ navigation }) => ({
+		title: 'This is ${navigation.state.params.param1}',
+	});
+	render() {
+		const { params } = this.props.navigation.state;
+		return (
+			<View>
+				<Text>Some texticles with {params.param2}</Text>
+			</View>
+		);
+	}
+				}
+
+class SyncScreen extends React.Component {
+	static naviationOptions = ({ navigation }) => ({
+		title: 'This is ${navigation.state.params.param1}',
+	});
+	render() {
+		const { params } = this.props.navigation.state;
+		return (
+			<View>
+				<Text>Some texticles with {params.param2}</Text>
+			</View>
+		);
+	}
+}
+
+class SettingScreen extends React.Component {
 	static naviationOptions = ({ navigation }) => ({
 		title: 'This is ${navigation.state.params.param1}',
 	});
@@ -40,8 +68,10 @@ class NextScreen extends React.Component {
 }
 
 export default const Younisn = StackNavigator({
-	Home: { screen: HomeScreen },
-	Next: { screen: NextScreen },
+	Login: { screen: LoginScreen },
+	Load: { screen: LoadScreen },
+	Sync: { screen: SyncScreen },
+	Setting: { screen: SettingScreen },
 });
 
 //AppRegistry.registerComponent('Younisn', () => Younisn);
